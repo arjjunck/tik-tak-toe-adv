@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #101010;
+    flex-direction: column; 
+    margin: 0;
+    overflow: hidden; /* Prevent vertical scroll */
+}
+
+.card {
+    background-color: #2c2c2c;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 4px 4px 0 #b1dd1d;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.card-heading {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #b1dd1d;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-align: left;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-button {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #601fe5;
+    color: #f5f5f5;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-height: 40px;
+}
+
+.circle-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.card-button:hover {
+    background-color: #692fdb;
+}
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: anim 10s linear infinite;
+}
+
+.text span {
+    position: absolute;
+    left: 50%;
+    font-size: 1rem;
+    transform-origin: 0 100px;
+}
+
+.GamePage {
+    color: white;
+    background-color: #d8f500;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 6px 6px 0 #692fdb;
+    border-radius: 8px;
+    margin: 10px auto; /* Center the box */
+}
+
+@media (max-width: 600px) {
+    .GamePage {
+        width: 90%;
+        max-width: 90%;
+        margin: 10px auto;
+    }
+}
+
+.game-header {
+    color: #0f190b;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.gameContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 250px;
+    height: 250px;
+    margin: 10px auto; /* Center the grid */
+    gap: 5px;
+}
+
+#restart-button, #home-button {
+    background-color: #0e190b;
+    color: #d8f500;
+    box-shadow: 4px 4px 0 #f3f5f5;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: #0e190b;
+    color: #d8f500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#statusText {
+    color: #692fdb;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+}
+
+@keyframes anim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-buttons {
+        flex-direction: column;
+    }
+
+    .card-button {
+        margin-bottom: 10px;
+    }
+
+    .card-button:last-child {
+        margin-bottom: 0;
+    }
+
+    .circle-container {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+}
+
+/* Styles for screens wider than 600px */
+@media (min-width: 600px) {
+    .card {
+        padding: 20px;
+        max-width: 400px;
+    }
+
+    .card-heading {
+        font-size: 2rem;
+    }
+
+    .card-button {
+        padding: 10px;
+        font-size: 20px;
+        max-height: 60px;
+    }
+
+    .circle-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .text span {
+        font-size: 1.2rem;
+    }
+
+    .GamePage {
+        padding: 20px;
+        max-width: 600px;
+    }
+
+    .gameContainer {
+        width: 300px;
+        height: 300px;
+    }
+
+    .cell {
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+    }
+
+    #statusText {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
